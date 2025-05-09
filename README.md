@@ -30,11 +30,12 @@ SHL Assessment Recommendation System/
 │   ├── assessments.json     # Raw SHL catalog
 │   ├── metadata.json        # Processed descriptions
 │   └── nn\_model.pkl         # Pretrained NearestNeighbors model
+|   └── requirements.txt
 ├── frontend/
 │   └── streamlit\_app.py     # Web interface
+|   └── requirements.txt
 ├── docs/
 │   └── approach.md          # Project explanation
-├── requirements.txt
 ├── Dockerfile
 ├── README.md
 
