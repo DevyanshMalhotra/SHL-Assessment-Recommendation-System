@@ -1,0 +1,64 @@
+# generate_test_csv.py
+
+import csv
+from pathlib import Path
+
+rows=[{"query":"I am hiring for Java developers who can also collaborate effectively with my business teams. Looking for an assessment(s) that can be completed in 40 minutes.",
+       "relevant_urls":"|".join([
+           "https://www.shl.com/solutions/products/productcatalog/view/automata-fix-new/",
+           "https://www.shl.com/solutions/products/productcatalog/view/core-java-entry-level-new/",
+           "https://www.shl.com/solutions/products/productcatalog/view/java-8-new/",
+           "https://www.shl.com/solutions/products/productcatalog/view/core-java-advanced-level-new/",
+           "https://www.shl.com/solutions/products/productcatalog/view/agile-software-development/",
+           "https://www.shl.com/solutions/products/productcatalog/view/technology-professional-8-0-jobfocused-assessment/",
+           "https://www.shl.com/solutions/products/productcatalog/view/computer-science-new/"
+       ])},
+      {"query":"I want to hire new graduates for a sales role in my company, the budget is for about an hour for each test. Give me some options",
+       "relevant_urls":"|".join([
+           "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-7-1/",
+           "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-sift-out-7-1/",
+           "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-solution/",
+           "https://www.shl.com/solutions/products/productcatalog/view/sales-representative-solution/",
+           "https://www.shl.com/solutions/products/productcatalog/view/sales-support-specialist-solution/",
+           "https://www.shl.com/solutions/products/productcatalog/view/technical-sales-associate-solution/",
+           "https://www.shl.com/solutions/products/productcatalog/view/svar-spoken-english-indian-accentnew/",
+           "https://www.shl.com/solutions/products/productcatalog/view/sales-and-service-phone-solution/",
+           "https://www.shl.com/solutions/products/productcatalog/view/sales-and-service-phone-simulation/",
+           "https://www.shl.com/solutions/products/productcatalog/view/english-comprehension-new/"
+       ])},
+      {"query":"I am looking for a COO for my company in China and I want to see if they are culturally a right fit for our company. Suggest me an assessment that they can complete in about an hour",
+       "relevant_urls":"|".join([
+           "https://www.shl.com/solutions/products/productcatalog/view/motivation-questionnaire-mqm5/",
+           "https://www.shl.com/solutions/products/productcatalog/view/global-skills-assessment/",
+           "https://www.shl.com/solutions/products/productcatalog/view/graduate-8-0-job-focusedassessment-4228/"
+       ])},
+      {"query":"Content Writer required, expert in English and SEO.",
+       "relevant_urls":"|".join([
+           "https://www.shl.com/solutions/products/productcatalog/view/drupal-new/",
+           "https://www.shl.com/solutions/products/productcatalog/view/search-engine-optimization-new/",
+           "https://www.shl.com/solutions/products/productcatalog/view/administrative-professional-shortform/",
+           "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-sift-out-7-1/",
+           "https://www.shl.com/solutions/products/productcatalog/view/general-entry-level-data-entry-7-0solution/"
+       ])},
+      {"query":"ICICI Bank Assistant Admin, Experience required 0-2 years, test should be 30-40 mins long",
+       "relevant_urls":"|".join([
+           "https://www.shl.com/solutions/products/productcatalog/view/administrative-professional-shortform/",
+           "https://www.shl.com/solutions/products/productcatalog/view/verify-numerical-ability/",
+           "https://www.shl.com/solutions/products/productcatalog/view/financial-professional-short-form/",
+           "https://www.shl.com/solutions/products/productcatalog/view/bank-administrative-assistant-shortform/",
+           "https://www.shl.com/solutions/products/productcatalog/view/general-entry-level-data-entry-7-0solution/",
+           "https://www.shl.com/solutions/products/productcatalog/view/basic-computer-literacy-windows10-new/"
+       ])},
+      {"query":"KEY RESPONSIBITILES: Manage the sound-scape of the station through appropriate creative and marketing interventions...TECHNICAL SKILLS & QUALIFICATION REQUIRED: Graduation / Post Graduation (Any specialisation) with 8 -12 years of relevant experience... Suggest me some tests for the above jd. The duration should be at most 90 mins",
+       "relevant_urls":"|".join([
+           "https://www.shl.com/solutions/products/productcatalog/view/verify-verbal-ability-nextgeneration/",
+           "https://www.shl.com/solutions/products/productcatalog/view/shl-verify-interactive-inductivereasoning/",
+           "https://www.shl.com/solutions/products/productcatalog/view/occupational-personalityquestionnaire-opq32r/"
+       ])}
+]
+
+Path("tests").mkdir(exist_ok=True)
+with open("tests/test_queries.csv","w",newline="",encoding="utf-8") as f:
+    w=csv.DictWriter(f,fieldnames=["query","relevant_urls"])
+    w.writeheader()
+    w.writerows(rows)

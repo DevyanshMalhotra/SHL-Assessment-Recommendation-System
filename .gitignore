@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pkl
+*.npz
+*.npy
+*.log
+
+# Environment
+.env
+.venv/
+env/
+venv/
+*.env
+
+# Streamlit
+.streamlit/config.toml
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build & Distribution
+build/
+dist/
+*.egg-info/
+
+# Docker
+*.db
+*.pid
+docker-compose.override.yml

@@ -1,0 +1,15 @@
+chromadb>=0.4.0
+google-generativeai
+beautifulsoup4
+requests
+fastapi
+uvicorn[standard]
+pandas
+python-dotenv
+streamlit
+scipy
+scikit-learn
+faiss-cpu
+sentence-transformers
+hf_xet
+tabulate
